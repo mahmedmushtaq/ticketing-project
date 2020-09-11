@@ -15,7 +15,7 @@ build:
       sync:
         manual:
           - src: src/**/*.ts
-            dest: .  
+            dest: .
     - image: mahmedmushtaq/client
       context: client
       docker:
@@ -23,7 +23,7 @@ build:
       sync:
         manual:
           - src: '**/*.js'
-            dest: .  
+            dest: .
     - image: mahmedmushtaq/tickets
       context: tickets
       docker:
@@ -31,4 +31,12 @@ build:
       sync:
         manual:
           - src: src/**/*.ts
-            dest: .  
+            dest: .
+    - image: mahmedmushtaq/orders
+      context: orders
+      docker:
+        dockerfile: DockerFile
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
