@@ -30,3 +30,5 @@ it('returns a 401 if the user does not own the ticket', async () => {});
 it('returns a 400 if the user provides an invalid title or price', async () => {});
 
 it('updates the ticket provided valid inputs', async () => {});
+
+it('return 400 bad request if ticket is already reserved', async () => {});

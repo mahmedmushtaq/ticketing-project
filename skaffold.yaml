@@ -40,3 +40,20 @@ build:
         manual:
           - src: src/**/*.ts
             dest: .
+    - image: mahmedmushtaq/expiration
+      context: expiration
+      docker:
+        dockerfile: DockerFile
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
+
+    - image: mahmedmushtaq/payments
+      context: payments
+      docker:
+        dockerfile: DockerFile
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
