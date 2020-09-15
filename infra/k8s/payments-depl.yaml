@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: payments
-          image: mahmedmushtaq/payments
+          image: us.gcr.io/ticketing-dev-289410/payments
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
@@ -31,6 +31,11 @@ spec:
                 secretKeyRef:
                   name: jwt-secret
                   key: JWT_KEY
+            - name: STRIPE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: stripe-secret
+                  key: STRIPE_KEY      
 
 ---
 apiVersion: v1

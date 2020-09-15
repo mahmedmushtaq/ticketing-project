@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@muab/common": "^1.0.9",
+    "@muab/common": "^1.0.11",
     "@types/cookie-session": "^2.0.41",
     "@types/express": "^4.17.7",
     "@types/jest": "^26.0.12",

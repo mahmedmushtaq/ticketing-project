@@ -3,10 +3,14 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 
+import { keys } from '../keys/key';
+
+process.env.STRIPE_KEY = keys.STRIPE_KEY;
+
 declare global {
   namespace NodeJS {
     interface Global {
-      signin(): string[];
+      signin(id?: string): string[];
     }
   }
 }
@@ -39,10 +43,10 @@ afterAll(async () => {
   await mongoose.connection.close();
 });
 
-global.signin = () => {
+global.signin = (id?: string) => {
   // Build a JWT payload.  { id, email }
   const payload = {
-    id: '1lk24j124l',
+    id: id || '1lk24j124l',
     email: 'test@test.com',
   };
 

@@ -5,14 +5,14 @@ import {
   OrderStatus,
 } from '@muab/common';
 import { Message } from 'node-nats-streaming';
-import { queryGroupName } from './queue-group-name';
+import { queueGroupName } from './queue-group-name';
 import { Order } from '../../models/order';
 import { OrderCancelledPublisher } from '../publishers/order-cancelled-publisher';
 
 export class ExpirationCompleteListener extends Listener<
   ExpirationCompleteEvent
 > {
-  queueGroupName = queryGroupName;
+  queueGroupName = queueGroupName;
   subject: Subjects.ExpirationComplete = Subjects.ExpirationComplete;
 
   async onMessage(data: ExpirationCompleteEvent['data'], msg: Message) {
