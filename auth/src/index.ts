@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import { app } from './app';
 
 const start = async () => {
-  console.log('starting up...');
+  console.log('auth service is starting up...');
   if (!process.env.JWT_KEY) {
     throw new Error('JWT key must be valid');
   }
