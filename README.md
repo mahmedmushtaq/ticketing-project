@@ -7,4 +7,4 @@
 5- Next.js <br/>
 6- Nats streaming server
 
-### Developed on google cloud
+### Deployed on google cloud
